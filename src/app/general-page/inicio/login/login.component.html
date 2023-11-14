@@ -1,0 +1,63 @@
+<link rel="icon" type="image/x-icon" href="assets/Logo.png">
+<div class="container">
+    <div class="row" style="width: 110%;">
+      <div class="col-lg-6 offset-lg-3">
+        <div class="card text-center" style="padding: 20px;">
+          <div style="display: flex; justify-content: space-between;">
+            <h3 style="font-family: 'Rowdies', cursive;">LOGIN</h3>
+          </div>
+          <br>
+          <form [formGroup]="login" (ngSubmit)="log()">
+            
+            <div class="form-group">
+              <div class="input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Usuario"
+                  formControlName="usuario" style="width: 50%;"
+                />
+                <span
+                  class="text-danger ml-2"
+                  *ngIf="login.get('usuario')?.hasError('required') && login.get('usuario')?.touched"
+                >
+                  El Usuario es Requerido
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+                <img src="../../../../assets/Logo.png" alt="Login Image" style="width:47%; height: auto;">
+
+              <div class="input-container">
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Contraseña"
+                  formControlName="password" style="width: 50%"
+                />
+                <span
+                  class="text-danger ml-2"
+                  *ngIf="login.get('password')?.hasError('required') && login.get('password')?.touched"
+                >
+                  La Contraseña es Requerida
+                </span>
+              </div>
+            </div>
+            <div class="form-group" style="width: 50%;">
+              <button
+                class="btn btn-primary mr-2 btn-login"
+                [disabled]="login.invalid"
+                type="submit"
+              >
+                Aceptar
+              </button>
+              <button class="btn btn-secondary" routerLink="/bienvenida">Volver</button>
+            </div>
+            <br>
+            <div class="form-group" style="width: 50%;">
+              <a routerLink="/register" style="color: #f05f44; cursor: pointer;">Crear Cuenta</a>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>

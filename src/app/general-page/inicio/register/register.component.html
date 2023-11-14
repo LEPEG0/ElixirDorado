@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row" style="width: 100%;">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center" style="padding: 20px;">
+                <h3>REGISTRAR</h3>
+                <br>
+                <form [formGroup]="register" (ngSubmit)="reg()">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
+                        <span class="text-danger ml-2" *ngIf="register.get('usuario')?.hasError('required') && register.get('usuario')?.touched" >
+                            El Usuario es Requerido
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+                        <span class="text-danger ml-2" 
+                        *ngIf="register.get('password')?.hasError('minlength') && register.get('password')?.touched">
+                            La Contraseña debe de tener minimo 4 caracteres.
+                        </span>
+                        <span class="text-danger ml-2" 
+                        *ngIf="register.get('password')?.hasError('required') && register.get('password')?.touched">
+                            La Contraseña es Requerido
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password2">
+                        <span class="text-danger ml-2" *ngIf="register?.hasError('notSame')">
+                            Las Contaseñas no son iguales
+                        </span>
+                    </div>
+                    <div class="form-gruop">
+                        <button class="btn btn-primary mr-2 btn-register" [disabled]="register.invalid" type="submit">Aceptar</button>
+                        <button class="btn btn-secondary" routerLink="/bienvenida">Volver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

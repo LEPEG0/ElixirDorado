@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+    min-height: 110vh;
+    margin-left: 15%; /* Ajusta el valor de margen izquierdo según tus preferencias */
+  }
+  
+  h3 {
+    font-family: "Rowdies", cursive;
+  }
+  
+  .btn-login {
+    background-color: #f05f44;
+    border-color: #f05f44;
+  }
+  
+  .yellow-rectangle {
+    background-color: yellow;
+    width: 100px; /* Ancho deseado */
+    height: 100%; /* La altura se ajustará automáticamente al contenido del formulario */
+    position: absolute;
+    right: 0;
+    margin-right: 0px; /* Añadir un margen derecho para separar el rectángulo del contenido */
+  }
+  
+  img {
+    margin: 20px;
+    float: right;
+    position: absolute;
+    margin-top: -130px;  /* Ajusta el valor negativo según tus necesidades para mover la imagen hacia arriba */
+    
+  }
